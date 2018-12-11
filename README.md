@@ -2,6 +2,11 @@
 
 https://bootstrap-vue.js.org/docs
 
+### To Run Project!!!
+```bash
+$ npm run prod
+```
+
 ## Install
 
 ```bash
