@@ -1,0 +1,79 @@
+{
+	"name": "electron-vue-boilerplate",
+	"version": "1.2.2",
+	"description": "Simple boilerplate for building Vue app with Electron and Webpack.",
+	"main": "./src/main.js",
+	"scripts": {
+		"dev": "npx cross-env NODE_ENV=development npx webpack-dev-server --hot",
+		"build": "npx cross-env NODE_ENV=production npx webpack --hide-modules --progress",
+		"start": "npm run start:dev",
+		"start:dev": "npx cross-env NODE_ENV=development npx electron ./ --disable-gpu",
+		"start:prod": "npm run build && npx cross-env NODE_ENV=production npx electron ./ --disable-gpu",
+		"pack": "npm run build && npx electron-builder --dir",
+		"dist": "npm run build && npx electron-builder",
+		"dist:w": "npm run build && npx electron-builder -w --x64 --ia32",
+		"dist:m": "npm run build && npx electron-builder -m --x64 --ia32",
+		"dist:l": "npm run build && npx electron-builder -l --x64 --ia32",
+		"dist:all": "npm run build && npx electron-builder -mwl --x64 --ia32",
+		"postinstall": "npx electron-builder install-app-deps"
+	},
+	"build": {
+		"appId": "app.id",
+		"directories": {
+			"output": "./build/"
+		}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/oliverfindl/electron-vue-boilerplate.git"
+	},
+	"keywords": [
+		"electron",
+		"electron-builder",
+		"webpack",
+		"webpack-dev-server",
+		"vue",
+		"vue-router",
+		"vuex",
+		"sass",
+		"node-sass",
+		"boilerplate",
+		"electron-vue-boilerplate"
+	],
+	"author": "Oliver Findl",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/oliverfindl/electron-vue-boilerplate/issues"
+	},
+	"homepage": "https://github.com/oliverfindl/electron-vue-boilerplate#readme",
+	"dependencies": {
+		"bootstrap-vue": "^2.0.0-rc.11",
+		"vue": "^2.5.17",
+		"vue-router": "^3.0.2"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^7.1.5",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-minify": "^0.4.3",
+		"babel-preset-stage-2": "^6.24.1",
+		"babel-preset-vue": "^2.0.2",
+		"clean-webpack-plugin": "^0.1.19",
+		"cross-env": "^5.2.0",
+		"css-loader": "^1.0.0",
+		"devtron": "^1.4.0",
+		"electron": "^2.0.8",
+		"electron-builder": "^20.28.4",
+		"file-loader": "^2.0.0",
+		"html-webpack-plugin": "^3.2.0",
+		"node-sass": "^4.9.3",
+		"sass-loader": "^7.1.0",
+		"vue-devtools": "^4.1.4",
+		"vue-loader": "^15.4.1",
+		"vue-style-loader": "^4.1.2",
+		"vue-template-compiler": "^2.5.17",
+		"webpack": "^4.17.2",
+		"webpack-cli": "^3.1.0",
+		"webpack-dev-server": "^3.1.8"
+	}
+}
